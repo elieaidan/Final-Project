@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/search_hotel.css">
+<br><br>
+<div class='form_city'>
+<form method="POST">
+    {% csrf_token %}
+    <label for="city">Choose a city:</label>
+    <select name="city" id="city">
+        <option value="">Select a city</option>
+        {% for city in cities %}
+             <option value="{{ city.name }}">{{ city.name }}</option>
+         {% endfor %}
+     </select>
+    <label for="price_per_night">Enter the price you are willing to pay per person/per night:</label>
+    <input type="number" class="form-control" id="price" id="price_per_night" name="price_per_night">
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+{% endblock %}
+
+
+
+
+
+

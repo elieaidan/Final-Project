@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="/static/css/accueil.css">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Welcome to TRIPAIDAN!!</h1>
+        <p>Discover the activities and hotels that could make you happy for your vacation.</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <a href="{% url 'search' %}">
+          <img id="img1" src="{% static 'images/activite.png' %}" class="img-fluid" alt="Photo d'activité">
+        </a>
+        <p> To compare activities based on your rates</p>
+
+      </div>
+      <div class="col-md-6">
+        <a href="{% url 'hotel_search' %}">
+          <img id="img2" src="{% static 'images/hotel.png' %}" class="img-fluid" alt="Photo d'hôtel">
+        </a>
+        <p> To compare hotels based on your rates</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

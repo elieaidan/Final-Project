@@ -1,0 +1,40 @@
+body{
+    background-color: darkorange;
+}
+
+
+.container {
+    margin-top: 5rem;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    color: azure;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    color: azure;
+
+  }
+  
+  img {
+    cursor: pointer;
+   
+  }
+  
+  img:hover {
+    opacity: 0.8;
+  }
+  
+  #img1 {
+    width: 60%;
+    height: auto;
+  }
+
+  #img2{
+    width: 75%;
+    height: auto;
+  }
+
+ 

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/style_search_result.css">
+
+{% if activities %}
+    <div class="activities">
+      <h2>Activités dans {{ activities.0.city }}</h2>
+      {% for activity in activities %}
+        <div class="activity">
+       
+          <div class="activity-info">
+            <h3>{{ activity.name }}</h3>
+            <p>{{ activity.description }}</p>
+            <p>Price : {{ activity.price }} € per person</p>
+            {% if activity.url %}
+              <p><a href="{{ activity.url }}">Activity website</a></p>
+            {% endif %}
+          </div>
+        </div>
+      {% empty %}
+        <p>Sorry, we couldn't find any activity matching your request. Maybe you could try increasing your budget a bit to get more entertainment options?</p>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Sorry, we couldn't find any activity matching your request. Maybe you could try increasing your budget a bit to get more entertainment options?</p>
+  {% endif %}
+  
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/style_search_result.css">
+<br><br>
+  <h1>Search results for <b>{{ city.name }}<b></h1>
+
+  {% if hotels %}
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name of the hotel</th>
+          <th scope="col">Address</th>
+          <th scope="col">Price per nuit</th>
+          <th scope="col">Number of star(s)</th>
+          <th scope="col">Web site</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for hotel in hotels %}
+          <tr>
+            <td><strong>{{ hotel.name }}</strong></td>
+            <td>{{ hotel.address }}</td>
+            <td>{{ hotel.prix_per_night }} €</td>
+            <td>{{ hotel.nombre_etoiles }}</td>
+            <td><a href="{{ hotel.url }}" target="_blank">Web site</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No hotel found for the city of {{ city.name }} at a  price of {{ price_per_night }} € per night.</p>
+    <p> Save a little more so you can get the real kick out of it...</p>
+  {% endif %}
+{% endblock %}

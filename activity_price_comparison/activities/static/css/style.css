@@ -1,0 +1,61 @@
+body {
+    background: url('/static/images/photovacances.png') no-repeat center center fixed;
+    background-size:cover;
+    
+   
+}
+.form_city{
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+    
+}
+
+
+form {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    
+}
+label {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+select,
+input[type="number"] {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1rem;
+    width: 80%;
+    max-width: 20rem;
+    color: #333;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 1.2rem;
+    width: 80%;
+    max-width: 20rem;
+    cursor: pointer;
+}
+button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}

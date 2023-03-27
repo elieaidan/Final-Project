@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="/static/css/style.css">
+<br><br>
+<div class='form_city'>
+<form action="{% url 'search_result' %}" method="post">
+    {% csrf_token %}
+    <label for="city">Choose a city:</label>
+    <select name="city" id="city">
+        <option value="">Select a city</option>
+        {% for city in cities %}
+            <option value="{{ city.name }}">{{ city.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="price">Enter the price you are willing to pay per person in:</label>
+    <input type="number" name="price" id="price" min="0">
+    <button type="submit" {% if not cities %}disabled{% endif %}>Search</button>
+    {% if not cities %}
+        <p>Please add cities and activities to the database first to search.</p>
+    {% endif %}
+</form>
+</div>
+
+{% endblock %}
