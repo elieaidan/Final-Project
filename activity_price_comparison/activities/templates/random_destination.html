@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/destination.css">
+
+<div class="random-destination">
+    
+  <h2>Click here to choose my next destination</h2>
+  <form method="post" action="{% url 'random_destination' %}">
+    {% csrf_token %}
+    <button type="submit">Choose a random city</button>
+    <br> <br>
+  </form>
+  {% if message %}
+    <h1><b>{{ message }}<b></h1>
+  {% endif %}
+</div>
+
+<div class="search-activity">
+    <br><br>
+  <h2>Choose my activities for my trip</h2>
+  <form method="get" action="{% url 'search' %}">
+    <button type="submit">Search for activities</button>
+  </form>
+</div>
+
+<div class="search-hotel">
+    <br><br>
+  <h2>Choose my hotel for my trip</h2>
+  <form method="get" action="{% url 'hotel_search' %}">
+    <button type="submit">Search for hotels</button>
+  </form>
+</div>
+
+
+{% endblock %}

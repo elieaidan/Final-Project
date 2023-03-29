@@ -1,20 +1,21 @@
-body{
-    background-color: darkorange;
-}
+ 
+ 
+ body{
+    background-color:lightgray;
+ }
 
-
-.container {
+ .container {
     margin-top: 5rem;
   }
   
   h1 {
     font-size: 4rem;
-    color: azure;
+    color: green;
   }
   
   p {
-    font-size: 1.5rem;
-    color: azure;
+    font-size: 2rem;
+    color: green;
 
   }
   

@@ -9,22 +9,33 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h1>Welcome to TRIPAIDAN!!</h1>
-        <p>Discover the activities and hotels that could make you happy for your vacation.</p>
+        <p><b>Discover the activities and hotels that could make you happy for your vacation.<b></p>
       </div>
     </div>
+    <br><br>
     <div class="row mt-5">
       <div class="col-md-6">
         <a href="{% url 'search' %}">
           <img id="img1" src="{% static 'images/activite.png' %}" class="img-fluid" alt="Photo d'activité">
         </a>
-        <p> To compare activities based on your rates</p>
+        <br>
+        <p> <b>Click on the picture to compare activities based on your rates<b></p>
 
       </div>
       <div class="col-md-6">
         <a href="{% url 'hotel_search' %}">
           <img id="img2" src="{% static 'images/hotel.png' %}" class="img-fluid" alt="Photo d'hôtel">
         </a>
-        <p> To compare hotels based on your rates</p>
+        <br>
+        <p> <b>Click on the picture to compare hotels based on your rates<b></p>
+      </div>
+
+      <div class="col-md-12 text-center">
+        <br><br> <p>If you don't know where to go yet, press the button below</p>
+        <form method="post" action="{% url 'random_destination' %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-success">Choose a random city</button>
+        </form>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from random import choice
 from .models import City, Activity, Hotel
 from django.db.models import Q
 from django.contrib import messages
@@ -94,3 +95,9 @@ def hotel_search_results(request):
 
 
 
+def random_destination(request):
+    cities = City.objects.all()
+    random_city = choice(cities)
+    message = f"{random_city.name}"
+    context = {'message': message}
+    return render(request, 'random_destination.html', context)
